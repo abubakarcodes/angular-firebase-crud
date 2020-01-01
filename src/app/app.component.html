@@ -1,0 +1,8 @@
+<input type="text" #course>
+<input type="text" #price>
+<button (click)="addCourse(course, price)">Save</button>
+<ul>
+  <li *ngFor="let course of courses | async">
+    {{course.name}} <span>{{course.price}}$</span> <button (click)="updateCourse(course)">Update</button><button (click)="deleteCourse(course)">Delete</button>
+  </li>
+</ul>
